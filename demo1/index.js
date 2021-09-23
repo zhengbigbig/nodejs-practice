@@ -1,24 +1,39 @@
-const program = require("commander");
+const fs = require('fs')
+const homedir = require('os').homedir()
+const home = process.env.Home || homedir
+const p = require('path')
+const dbPath = p.join(home, '.todo')
 
-program
-    .option('-d, --debug', 'output extra debugging')
-    .option('-s, --small', 'small pizza size')
-    .option('-p, --pizza-type <type>', 'flavour of pizza');
+module.exports.add = (title) => {
+    console.log(title, 111)
+    /*
+    1. 读取之前的任务
+    2. 往里面加一个title任务
+    3. 存储任务到文件
+     */
+    fs.readFile(dbPath, {flag: 'a+'}, (err, data) => {
+        if (err) {
+            console.log(err)
+        }
+        let list;
+        try {
+            list = JSON.parse(data.toString())
+        } catch (e) {
+            list = []
+        }
+        list.push({
+            title,
+            done: false
+        })
+        const str = JSON.stringify(list)
+        fs.writeFile(dbPath, str + '\n', (error) => {
+            if (error) {
+                console.log(error);
+            }
+        })
+    })
+}
 
-program
-    .command('add')
-    .description('add a task')
-    .action((...args) => {
-        const words = args.slice(0, -1).join(' ');
-        console.log(words)
-    });
+module.exports.clear = () => {
 
-program
-    .command('clear')
-    .description('clear a task')
-    .action((...args) => {
-        const words = args.slice(0, -1).join(' ');
-        console.log(words)
-    });
-
-program.parse(process.argv);
+}
