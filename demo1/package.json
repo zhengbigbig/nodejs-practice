@@ -1,18 +1,18 @@
 {
-  "name": "demo1",
-  "version": "1.0.0",
+  "name": "node-demo-todolist",
+  "version": "0.0.2",
   "description": "",
   "main": "cli.js",
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bin": {
-    "t": "cli.js"
+    "todo": "cli.js"
   },
   "files": [
     "*.js"
   ],
-  "scripts":{
+  "scripts": {
     "test": "jest"
   },
   "dependencies": {
