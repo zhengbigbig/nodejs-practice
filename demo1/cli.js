@@ -1,4 +1,5 @@
 const program = require("commander");
+const inquirer = require("inquirer")
 const api = require('./index.js')
 
 program
@@ -11,7 +12,11 @@ program
     .description('add a task')
     .action((...args) => {
         const words = args.slice(0, -1).join(' ');
-        api.add(words)
+        api.add(words).then(() => {
+            console.log('add successful')
+        }, () => {
+            console.log('add failed')
+        })
     });
 
 program
@@ -23,3 +28,7 @@ program
     });
 
 program.parse(process.argv);
+
+if(process.argv.length === 2){
+    void api.read()
+}
