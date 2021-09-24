@@ -22,9 +22,8 @@ program
 program
     .command('clear')
     .description('clear a task')
-    .action((...args) => {
-        const words = args.slice(0, -1).join(' ');
-        console.log(words)
+    .action(() => {
+        void api.clear()
     });
 
 program.parse(process.argv);
