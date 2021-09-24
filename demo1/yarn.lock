@@ -2523,6 +2523,14 @@ nice-try@^1.0.4:
   resolved "https://registry.nlark.com/nice-try/download/nice-try-1.0.5.tgz#a3378a7696ce7d223e88fc9b764bd7ef1089e366"
   integrity sha1-ozeKdpbOfSI+iPybdkvX7xCJ42Y=
 
+node-demo-todolist@^0.0.2:
+  version "0.0.2"
+  resolved "https://registry.npmjs.org/node-demo-todolist/-/node-demo-todolist-0.0.2.tgz#7076d17a31d113b583e38884f1c33c56623a7399"
+  integrity sha512-xp/nQfhzK6A8EOQfugbBU+yHHXimo3epyoXTbV0St4+Ax34uc4MKv+quWeXHZG0TwmeM1au2hQB7y+L69tmjSA==
+  dependencies:
+    commander "^3.0.2"
+    inquirer "^7.0.0"
+
 node-int64@^0.4.0:
   version "0.4.0"
   resolved "https://registry.nlark.com/node-int64/download/node-int64-0.4.0.tgz#87a9065cdb355d3182d8f94ce11188b825c68a3b"

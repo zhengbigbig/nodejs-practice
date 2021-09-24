@@ -1,12 +1,13 @@
+#!/usr/bin/env node
 const program = require("commander");
-const inquirer = require("inquirer")
 const api = require('./index.js')
+const pkg = require('./package.json')
 
 program
-    .option('-d, --debug', 'output extra debugging')
-    .option('-s, --small', 'small pizza size')
-    .option('-p, --pizza-type <type>', 'flavour of pizza');
+    .option('-n, --name', 'whats your name')
 
+program
+    .version(pkg.version)
 program
     .command('add')
     .description('add a task')
@@ -28,6 +29,6 @@ program
 
 program.parse(process.argv);
 
-if(process.argv.length === 2){
+if (process.argv.length === 2) {
     void api.read()
 }
