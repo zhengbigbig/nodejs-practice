@@ -1,13 +1,13 @@
 {
   "name": "fy-zbb",
-  "version": "0.0.3",
-  "main": "dist/main.js",
+  "version": "0.2.1",
+  "main": "dist/cli.js",
   "license": "MIT",
   "scripts": {
     "start": "ts-node-dev src/main.ts"
   },
   "bin": {
-    "fy": "dist/cli.ts"
+    "fy": "dist/cli.js"
   },
   "files": [
     "dist/**/*.js"
