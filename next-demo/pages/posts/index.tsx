@@ -1,23 +1,29 @@
-import {NextPage} from 'next';
-import {useRequest} from 'ahooks';
+import {GetStaticProps, NextPage} from 'next';
+import {getPosts} from 'lib/posts';
+import {Posts} from 'additional';
 
-type Posts = {
-    id: string;
-    title: string;
-    date: Date,
-    content: string;
+
+type Props = {
+    posts:Posts[];
 }
 
-const PostsIndex: NextPage = () => {
-    const {data=[], error, loading} = useRequest<Posts[]>('/api/v1/posts');
-    console.log(data);
+const PostsIndex: NextPage<Props> = (props) => {
     return (
         <div>
             {
-                data?.map?.(p => <div key={p.id}>{p.title}</div>)
+                props.posts.map(p=><div key={p.id}>{p.title}</div>)
             }
         </div>
     );
 };
 
 export default PostsIndex;
+
+export const getStaticProps:GetStaticProps = async () => {
+    const posts = await getPosts();
+    return {
+        props: {
+            posts: JSON.parse(JSON.stringify(posts))
+        }
+    };
+};

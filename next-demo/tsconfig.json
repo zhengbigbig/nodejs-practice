@@ -50,7 +50,8 @@
     /* Skip type checking all .d.ts files. */
   },
   "include": [
-    "src/**/*"
+    "src/**/*",
+    "*.d.ts",
   ],
   "exclude": [
     "node_modules"

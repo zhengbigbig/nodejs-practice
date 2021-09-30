@@ -1,8 +1,9 @@
-import React from "react";
-import Head from "next/head";
-import 'styles/globals.scss'
+import React from 'react';
+import Head from 'next/head';
+import 'styles/globals.scss';
+import type {AppProps} from 'next/app';
 
-function MyApp({Component, pageProps}) {
+function MyApp({Component, pageProps}: AppProps) {
     return (
         <div>
             <Head>
@@ -12,7 +13,7 @@ function MyApp({Component, pageProps}) {
             </Head>
             <Component {...pageProps} />
         </div>
-    )
+    );
 }
 
-export default MyApp
+export default MyApp;
