@@ -10,13 +10,13 @@
     "lib": [
       "dom",
       "dom.iterable",
-      "esnext"
+      "esnext",
     ],
     /* Specify a set of bundled library declaration files that describe the target runtime environment. */
     "jsx": "preserve",
     /* Specify what JSX code is generated. */
     /* Modules */
-    "module": "esnext",
+    "module": "commonjs",
     /* Specify what module code is generated. */
     // "rootDir": "./",                                  /* Specify the root folder within your source files. */
     "moduleResolution": "node",
@@ -43,7 +43,7 @@
     /* Ensure that casing is correct in imports. */
 
     /* Type Checking */
-    "strict": true,
+    "strict": false,
     /* Enable all strict type-checking options. */
     "noImplicitAny": true,
     /* Enable error reporting for expressions and declarations with an implied `any` type.. */
