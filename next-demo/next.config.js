@@ -1,27 +1,17 @@
 const withBundleAnalyzer = require('@next/bundle-analyzer')({
     enabled: process.env.ANALYZE === 'true'
 });
+// https://www.npmjs.com/package/next-compose-plugins
 const withPlugins = require('next-compose-plugins');
+// https://www.npmjs.com/package/next-images
+const withImages = require('next-images')
 
 // next.js configuration
 const nextConfig = {
     reactStrictMode: true,
 }
-module.exports = withPlugins([withBundleAnalyzer], {
+module.exports = withPlugins([withImages,withBundleAnalyzer], {
     webpack: (config, {webpack, isServer, dev}) => {
-        config.module.rules.push({
-            test: /\.(png|jpe?g|gif)$/i,
-            use: [
-                {
-                    loader: 'file-loader',
-                    options: {
-                        name: '[name].[contenthash].[ext]',
-                        outputPath: 'static', // disk path
-                        publicPath: '_next/static' // net path
-                    }
-                },
-            ],
-        })
         return config
     }
 }, nextConfig)
