@@ -10,6 +10,7 @@
     "analyze": "ANALYZE=true yarn build"
   },
   "dependencies": {
+    "ahooks": "^2.10.11",
     "gray-matter": "^4.0.3",
     "next": "^11.1.2",
     "react": "17.0.2",
