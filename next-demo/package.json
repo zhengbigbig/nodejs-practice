@@ -13,10 +13,13 @@
     "ahooks": "^2.10.11",
     "gray-matter": "^4.0.3",
     "marked": "^3.0.4",
+    "mysql": "^2.18.1",
     "next": "^11.1.2",
     "react": "17.0.2",
     "react-dom": "17.0.2",
+    "reflect-metadata": "^0.1.13",
     "sass": "^1.42.1",
+    "typeorm": "^0.2.37",
     "ua-parser-js": "^0.7.28"
   },
   "devDependencies": {
