@@ -3,5 +3,7 @@ export declare type Posts = {
     title: string;
     date: Date,
     content: string;
+    htmlContent:string;
 }
+
 
