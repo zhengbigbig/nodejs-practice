@@ -3,11 +3,14 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "concurrently \"next dev\" \"npx babel -w ./src --out-dir dist --extensions .ts,.tsx\"",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "analyze": "ANALYZE=true yarn build"
+    "analyze": "ANALYZE=true yarn build",
+    "typeorm:build": "npx babel ./src --out-dir dist --extensions .ts,.tsx",
+    "migration:run": "typeorm migration:run",
+    "migration:revert": "typeorm migration:revert"
   },
   "dependencies": {
     "@babel/cli": "^7.15.7",
@@ -33,6 +36,7 @@
     "@types/react": "^17.0.25",
     "@types/react-dom": "^17.0.9",
     "@types/ua-parser-js": "^0.7.36",
+    "concurrently": "^6.3.0",
     "eslint": "7.32.0",
     "eslint-config-next": "11.1.2",
     "file-loader": "^6.2.0",
