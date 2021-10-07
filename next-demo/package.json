@@ -10,7 +10,8 @@
     "analyze": "ANALYZE=true yarn build",
     "typeorm:build": "npx babel ./src --out-dir dist --extensions .ts,.tsx",
     "migration:run": "typeorm migration:run",
-    "migration:revert": "typeorm migration:revert"
+    "migration:revert": "typeorm migration:revert",
+    "entity:create": "typeorm entity:create"
   },
   "dependencies": {
     "@babel/cli": "^7.15.7",
