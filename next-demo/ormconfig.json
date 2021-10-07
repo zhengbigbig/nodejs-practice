@@ -5,7 +5,7 @@
    "username": "root",
    "password": "Silvanware*123",
    "database": "test",
-   "synchronize": true,
+   "synchronize": false,
    "logging": false,
    "entities": [
       "dist/entity/**/*.js"
